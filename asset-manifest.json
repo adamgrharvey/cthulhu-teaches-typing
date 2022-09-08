@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/cthulhu-teaches-typing/static/css/main.3f7caaf3.css",
-    "main.js": "/cthulhu-teaches-typing/static/js/main.cf23d162.js",
+    "main.js": "/cthulhu-teaches-typing/static/js/main.c2a6da16.js",
     "static/js/787.86e861fc.chunk.js": "/cthulhu-teaches-typing/static/js/787.86e861fc.chunk.js",
     "index.html": "/cthulhu-teaches-typing/index.html",
     "main.3f7caaf3.css.map": "/cthulhu-teaches-typing/static/css/main.3f7caaf3.css.map",
-    "main.cf23d162.js.map": "/cthulhu-teaches-typing/static/js/main.cf23d162.js.map",
+    "main.c2a6da16.js.map": "/cthulhu-teaches-typing/static/js/main.c2a6da16.js.map",
     "787.86e861fc.chunk.js.map": "/cthulhu-teaches-typing/static/js/787.86e861fc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3f7caaf3.css",
-    "static/js/main.cf23d162.js"
+    "static/js/main.c2a6da16.js"
   ]
 }
