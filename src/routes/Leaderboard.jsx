@@ -13,7 +13,7 @@ function Leaderboard() {
   function sendRequest(setLeaderboardData, setLoading) {
     return (new Promise((resolve, reject) => {
       axios
-        .get(`http://localhost:3000/api/leaderboard`, {
+        .get(`https://stark-fortress-32519.herokuapp.com/api/leaderboard`, {
           headers: {
             'content-type': 'application/json',
           },
