@@ -34,11 +34,11 @@ export default function App() {
 
         <LayoutWrapper>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/leaderboard" element={<Leaderboard />} />
-            <Route path="/user" element={<User />} />
+            <Route path="/cthulhu-teaches-typing/" element={<Home />} />
+            <Route path="/cthulhu-teaches-typing/about" element={<About />} />
+            <Route path="/cthulhu-teaches-typing/login" element={<Login />} />
+            <Route path="/cthulhu-teaches-typing/leaderboard" element={<Leaderboard />} />
+            <Route path="/cthulhu-teaches-typing/user" element={<User />} />
           </Routes>
         </LayoutWrapper>
       </UserContext.Provider>

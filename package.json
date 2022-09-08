@@ -2,6 +2,7 @@
   "name": "cthulhu-teaches-typing",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://adamgrharvey.github.io/cthulhu-teaches-typing/",
   "dependencies": {
     "@fontsource/roboto": "^4.5.8",
     "@testing-library/jest-dom": "^5.16.5",
@@ -24,7 +25,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "browserslist": {
     "production": [
@@ -40,6 +43,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.8",
+    "gh-pages": "^4.0.0",
     "postcss": "^8.4.16",
     "prettier": "^2.5.1",
     "prettier-plugin-tailwindcss": "^0.1.4",
