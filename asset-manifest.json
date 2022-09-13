@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/cthulhu-teaches-typing/static/css/main.69c27ef6.css",
-    "main.js": "/cthulhu-teaches-typing/static/js/main.b570f637.js",
+    "main.js": "/cthulhu-teaches-typing/static/js/main.86de34cb.js",
     "static/js/787.86e861fc.chunk.js": "/cthulhu-teaches-typing/static/js/787.86e861fc.chunk.js",
     "static/media/full-keys.svg": "/cthulhu-teaches-typing/static/media/full-keys.55b8451322260399c4fc790e10e4269c.svg",
     "static/media/tenkeyless-keys.svg": "/cthulhu-teaches-typing/static/media/tenkeyless-keys.84b0ca45baf6a41a082f75167b5f5732.svg",
@@ -15,11 +15,11 @@
     "static/media/mac-bg.svg": "/cthulhu-teaches-typing/static/media/mac-bg.5eeaef986e4f58ccb44527b260d7cf6f.svg",
     "static/media/65-bg.svg": "/cthulhu-teaches-typing/static/media/65-bg.c558e40a494b82e06321af2138ea73a0.svg",
     "main.69c27ef6.css.map": "/cthulhu-teaches-typing/static/css/main.69c27ef6.css.map",
-    "main.b570f637.js.map": "/cthulhu-teaches-typing/static/js/main.b570f637.js.map",
+    "main.86de34cb.js.map": "/cthulhu-teaches-typing/static/js/main.86de34cb.js.map",
     "787.86e861fc.chunk.js.map": "/cthulhu-teaches-typing/static/js/787.86e861fc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.69c27ef6.css",
-    "static/js/main.b570f637.js"
+    "static/js/main.86de34cb.js"
   ]
 }
