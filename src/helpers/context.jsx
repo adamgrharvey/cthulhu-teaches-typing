@@ -1,6 +1,8 @@
 import { createContext } from 'react';
 
 export const UserContext = createContext({});
+export const CodeContext = createContext(false);
+export const randomWordsContext = createContext({});
 
 // can have multiple contexts here
 // this can be used in any component

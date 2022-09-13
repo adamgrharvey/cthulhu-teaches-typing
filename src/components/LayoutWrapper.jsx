@@ -4,41 +4,30 @@ const LayoutWrapper = ({ children }) => {
   return (
     <div className="mx-auto max-w-3xl flex-col justify-between px-4 sm:px-6 xl:max-w-5xl xl:px-0 ">
       <div className="main-height flex flex-col justify-between font-sans">
-        <main className="mb-auto flex flex-col">{children}</main>
+        <main className="my-auto flex flex-col">{children}</main>
         <footer>
-          <div className="container flex flex-wrap items-center justify-between font-light text-pale-gold">
-            <Link to="/" className="flex items-center">
-              <span className="self-center text-xl hover:text-candle">HOME</span>
-            </Link>
-            <Link to="/leaderboard" className="flex items-center">
-              <span className="self-center text-xl hover:text-candle">LEADERBOARD</span>
+          <div className="dark:hover-text-candle container -my-5 flex flex-wrap items-center justify-between font-light text-kinda-teal dark:text-pale-gold">
+            <Link to="/cthulhu-teaches-typing/" className="flex items-center">
+              <span className="self-center text-xl hover:text-dark-navy dark:hover:text-candle">
+                HOME
+              </span>
             </Link>
             <ul className="mt-0 flex flex-row p-4">
               <li>
                 <Link
-                  to="/login"
-                  className="p-0 py-2 pr-4 pl-3 hover:text-candle"
-                  aria-current="about"
+                  to="/cthulhu-teaches-typing/leaderboard"
+                  className="p-0 py-2 pr-4 pl-3 hover:text-dark-navy dark:hover:text-candle"
                 >
-                  LOGIN
+                  LEADERBOARD
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/login"
-                  className="p-0 py-2 pr-4 pl-3 hover:text-candle"
-                  aria-current="about"
+                  to="/cthulhu-teaches-typing/multiplayer"
+                  className="p-0 py-2 pr-4 pl-3 hover:text-dark-navy dark:hover:text-candle"
+                  aria-current="multiplayer"
                 >
-                  SIGNUP
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/about"
-                  className="p-0 py-2 pr-4 pl-3 hover:text-candle"
-                  aria-current="about"
-                >
-                  ABOUT
+                  MULTIPLAYER
                 </Link>
               </li>
             </ul>

@@ -6,7 +6,8 @@ import { CartesianGrid, XAxis, YAxis, Tooltip, Area, AreaChart, Legend } from 'r
 import KeyboardDropdown from '../components/KeyboardDropdown';
 
 const User = () => {
-  const { user, userKeyboards, currentKeyboard } = useContext(UserContext);
+  const { user, userKeyboards, setUserKeyboards, setCurrentKeyboard, currentKeyboard } =
+    useContext(UserContext);
 
   const [userStats, setUserStats] = useState();
 
@@ -23,29 +24,44 @@ const User = () => {
       });
   };
 
+  const deleteKeyboard = function (keyboard_id) {
+    axios
+      .delete(`https://stark-fortress-32519.herokuapp.com/keyboards/${keyboard_id}`, {})
+      .then((res) => {
+        console.log('Success: Keyboard deleted');
+      })
+      .then(getKeyboardsByUserId(user.id))
+      .then(setCurrentKeyboard('1'))
+      .catch((err) => {
+        console.log('Error has occurred');
+        console.log(err);
+      });
+  };
+
+  const getKeyboardsByUserId = (userId) => {
+    const config = {
+      method: 'get',
+      url: `https://stark-fortress-32519.herokuapp.com/keyboards/${userId}`,
+      headers: {},
+    };
+
+    axios(config)
+      .then((res) => {
+        console.log('Success: user keyboards retrieved');
+        setUserKeyboards(res.data); // set user keyboards to state
+      })
+      .catch((err) => {
+        console.log('Error has occurred');
+        console.log(err);
+      });
+  };
+
   // useEffect to only load user data once
   useEffect(() => {
     if (user) {
       getUserData(user.id);
     }
   }, []);
-
-  // array of keyboard names as a list
-  const keyboardList = (keyboards) => {
-    if (keyboards) {
-      const keyboardNames = userKeyboards.map((keyboard) => {
-        return (
-          <li className="text-lg text-pale-gold" key={keyboard.id}>
-            {keyboard.name}
-          </li>
-        );
-      });
-      return keyboardNames;
-    }
-
-    const noKeyboards = <li>You have no keyboards</li>;
-    return noKeyboards;
-  };
 
   // returns data for a specific keyboard_id, or all keyboards if keyboard_id is undefined
   // used to generate graph with wpm and accuracy data
@@ -144,22 +160,41 @@ const User = () => {
     <div className="my-10 flex flex-col items-center justify-center">
       {userStats ? (
         <>
-          <div className="mb-5 flex w-full flex-col items-center justify-center rounded-lg border-2 border-blood-red-hover bg-darker-purple p-2">
-            <h1 className="my-3 text-4xl font-bold text-pale-gold">Keyboard Stats</h1>
-            <KeyboardDropdown />
+          <div className="mb-5 flex w-full flex-col items-center justify-center rounded-lg border-2 border-kinda-teal bg-darker-beige p-2 dark:border-blood-red-hover dark:bg-darker-purple">
+            <h1 className="my-3 text-4xl font-bold dark:text-pale-gold">Keyboard Stats</h1>
+            <div className="flex justify-center gap-3">
+              <KeyboardDropdown />
+              <button
+                className="bg-red group relative flex transform justify-center rounded-md border border-transparent py-1  px-2 text-sm font-medium text-dark-navy transition duration-300 ease-in-out hover:scale-105 hover:bg-kinda-teal focus:outline-none focus:ring-2 focus:ring-blood-red focus:ring-offset-2 dark:bg-pale-gold  dark:text-blood-red dark:hover:bg-blood-red dark:hover:text-pale-gold"
+                onClick={() => {
+                  deleteKeyboard(currentKeyboard);
+                  setTimeout(() => {
+                    setUserKeyboards(
+                      userKeyboards.filter(function (keyboard) {
+                        // eslint-disable-next-line eqeqeq
+                        return keyboard.id != currentKeyboard;
+                      })
+                    );
+                  }, 200);
+                }}
+              >
+                <span className="absolute inset-y-0 left-0 flex items-center pl-3"></span>
+                Delete Keyboard
+              </button>
+            </div>
             <div className="mr-7">{specificKeyboardStats}</div>
           </div>
 
-          <div className="mb-5 flex w-full flex-col items-center justify-center rounded-lg border-2 border-blood-red-hover bg-darker-purple p-2">
-            <h1 className="my-3 text-4xl font-bold text-pale-gold">Overall Stats</h1>
+          <div className="mb-5 flex w-full flex-col items-center justify-center rounded-lg border-2 border-kinda-teal bg-darker-beige p-2 dark:border-blood-red-hover dark:bg-darker-purple">
+            <h1 className="my-3 text-4xl font-bold dark:text-pale-gold">Overall Stats</h1>
             <div className="mr-7">{wpmStatsChart}</div>
             <div className="mr-7">{accuracyStatsChart}</div>
           </div>
 
-          <div className="mb-5 flex w-full flex-col items-center justify-center rounded-lg border-2 border-blood-red-hover bg-darker-purple p-2">
-            <h1 className="my-3 text-4xl font-bold text-pale-gold">Averages</h1>
+          <div className="mb-5 flex w-full flex-col items-center justify-center rounded-lg border-2 border-kinda-teal bg-darker-beige p-2 text-dark-navy dark:border-blood-red-hover dark:bg-darker-purple dark:text-pale-gold">
+            <h1 className="my-3 text-4xl font-bold dark:text-pale-gold">Averages</h1>
 
-            <table class="mb-5 w-9/12 table-auto text-center text-lg">
+            <table className="mb-5 w-9/12 table-auto text-center text-lg">
               <thead>
                 <tr>
                   <th className="px-4 py-2 text-center">Words Per Minute</th>
