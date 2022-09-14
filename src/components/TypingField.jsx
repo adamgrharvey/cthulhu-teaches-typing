@@ -21,7 +21,7 @@ export default function TypingField() {
   const { randomWords, setRandomWords } = useContext(randomWordsContext); // use context to get randomWords
 
   // timer functionality
-  const initialTimer = 15; // use constant for initial timer and pass to counter--needed for WPM
+  const initialTimer = 60; // use constant for initial timer and pass to counter--needed for WPM
   const [counter, setCounter] = useState(initialTimer);
   const [started, setStarted] = useState(false);
   const [soundStarted, setSoundStarted] = useState(false); // sound for countdown
