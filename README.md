@@ -23,6 +23,8 @@ Cthulhu Teaches Typing is a typing game for learning to type. It is a work in pr
 
 Our goal was to target the keyboard enthusiast market with a minimal, yet customizable application to track and compare typing statistics. We also wanted to create a fun and engaging typing game that would help users learn to type faster and more accurately.
 
+We use a Rails API Backend combined with React.js for the Frontend. Our API follows RESTful conventions.
+
 We hope you enjoy it! 
 
 ### Built With
